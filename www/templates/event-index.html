@@ -3,17 +3,35 @@
   It was wired up in the app config (app.js) 
   The 'events' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<ion-view title="Event Information">
+<ion-view title="Records">
   <ion-content>
+  <div class="row">
+    <div class="col col-offset-25 col-50" >
+        <img width="100%" src="img/LOGO.png" class="full-image inner-logo">
+    </div>
+</div>
 
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search Records"/>
+  </label>
+</div>
     <ion-list>
 
-      <ion-item ng-repeat="event in events" type="item-text-wrap" href="#/tab/event/{{event.id}}">
-        <h3>{{event.title}}</h3>
+      <ion-item ng-repeat="event in events" type="item-text-wrap">
+      <a class="item item-thumbnail-left list-views item-icon-right " href="#/tab/event/{{event.id}}">
+        <img src="img/blue-album.jpg">
+        <h2><b>{{event.title}}</b></h2>
         <p>{{event.description}}</p>
+        
+         <i class="icon ion-ios-arrow-forward"></i>
+      </a>  
+      
       </ion-item>
       
     </ion-list>
 
   </ion-content>
 </ion-view>
+

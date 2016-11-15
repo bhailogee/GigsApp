@@ -6,8 +6,17 @@
 -->
 <ion-view title="{{event.title}}">
   <ion-content padding="true">
-    <p>{{ event.description }}</p>
-
+  <div class="row space-remove">
+  	<div class="col col-67">
+  	<h3 class="event-heading"><b>{{event.title}}</b></h3>
+    <p class="event-detail">{{ event.description }}</p>
+    </div>
+    <div class="col">
+    <button class="button button-assertive button-small delete-btn">
+      Delete Record
+    </button>
+    </div>
+  </div>  
       <div ng-include src="'templates/event-performance-list.html'"></div>
           <button class="button button-full button-positive">
               Participants

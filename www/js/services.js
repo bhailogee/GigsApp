@@ -8,10 +8,10 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var events = [
-    { id: 0, title: 'Cats', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
-    { id: 1, title: 'Dogs', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
-    { id: 2, title: 'Turtles', description: 'Everyone likes turtles.' },
-    { id: 3, title: 'Sharks', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' }
+    { id: 0, title: 'Undertow Sessions', description: '18th sep 2016' },
+    { id: 1, title: 'Rockify Tonight', description: '25th sep 2016' },
+    { id: 2, title: 'Islamabad Rock Festival', description: '2nd oct 2016' },
+    { id: 3, title: 'String Festival', description: '9th nov 2016' }
   ];
 
   return {

@@ -8,8 +8,7 @@
     <ion-nav-back-button >
     </ion-nav-back-button>
     <ion-nav-buttons side="right" >
-        <button class="button ion-log-out  button-dark" ng-click="onLogout();">
-        </button>
+        <a class="ion-power logout-btn" ng-click="onLogout();" ></a>
     </ion-nav-buttons>
 </ion-nav-bar>
 
@@ -18,20 +17,14 @@
 
 
       <!-- Events Tab -->
-      <ion-tab title="Events" icon="icon ion-home" href="#/tab/events">
+      <ion-tab title="Records" icon="icon ion-ios-list-outline" href="#/tab/events">
         <ion-nav-view name="events-tab"></ion-nav-view>
       </ion-tab>
 
 
       <!-- Create Tab -->
-      <ion-tab title="Create" icon="icon ion-compose" href="#/tab/create">
+      <ion-tab title="Create Record" icon="icon ion-compose" href="#/tab/create">
         <ion-nav-view name="create-tab"></ion-nav-view>
-      </ion-tab>
-
-
-      <!-- About Tab -->
-      <ion-tab title="About" icon="icon ion-search" href="#/tab/about">
-        <ion-nav-view name="about-tab"></ion-nav-view>
       </ion-tab>
 
 
