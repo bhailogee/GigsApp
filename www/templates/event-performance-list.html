@@ -1,0 +1,27 @@
+<h3>Performances</h3>
+
+    <ion-list ng-controller="EventPerformanceCtrl"
+                         show-delete="shouldShowDelete"
+                         show-reorder="shouldShowReorder"
+                         can-swipe="listCanSwipe">
+        <ion-item ng-repeat="item in performances"  href="#/tab/performance/{{item.pid}}"> <!--class="item-thumbnail-left"-->
+
+            <span>{{item.pid}}</span>
+            <span>{{item.name}}</span>
+            <ion-option-button class="button-positive"
+                               ng-click="deleteEventPerformance(event.id,item.pid)">
+                Delete
+            </ion-option-button>
+           <!-- <ion-option-button class="button-info"
+                               ng-click="edit(item)">
+                Edit
+            </ion-option-button>-->
+            <!--<ion-delete-button class="ion-minus-circled"
+                               ng-click="performances.splice($index, 1)">
+            </ion-delete-button>-->
+            <!--<ion-reorder-button class="ion-navicon"
+                                on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+            </ion-reorder-button>-->
+
+        </ion-item>
+    </ion-list>

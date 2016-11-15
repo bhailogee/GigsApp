@@ -3,11 +3,11 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('PetService', function() {
+.factory('EventService', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var pets = [
+  var events = [
     { id: 0, title: 'Cats', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
     { id: 1, title: 'Dogs', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
     { id: 2, title: 'Turtles', description: 'Everyone likes turtles.' },
@@ -16,11 +16,27 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return pets;
+      return events;
     },
-    get: function(petId) {
+    get: function(eventId) {
       // Simple index lookup
-      return pets[petId];
+      return events[eventId];
+    },
+    getPerformances:function(eventId){
+
+      var performance = [
+        {pid:1,name:"a"},
+        {pid:2,name:"b"},
+        {pid:3,name:"c"},
+        {pid:4,name:"d"},
+        {pid:5,name:"e"}
+      ];
+
+      return performance;
+    },
+    deleteEventPerformance:function(eventID,performanceID){
+
+
     }
   }
 });

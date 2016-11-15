@@ -23,32 +23,41 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       templateUrl: 'templates/tabs.html'
     })
 
-    // the pet tab has its own child nav-view and history
-    .state('tab.pet-index', {
-      url: '/pets',
+    // the event tab has its own child nav-view and history
+    .state('tab.event-index', {
+      url: '/events',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-index.html',
-          controller: 'PetIndexCtrl'
+        'events-tab': {
+          templateUrl: 'templates/event-index.html',
+          controller: 'EventIndexCtrl'
         }
       }
     })
 
-    .state('tab.pet-detail', {
-      url: '/pet/:petId',
+    .state('tab.event-detail', {
+      url: '/event/:eventId',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-detail.html',
-          controller: 'PetDetailCtrl'
+        'events-tab': {
+          templateUrl: 'templates/event-detail.html',
+          controller: 'EventDetailCtrl'
         }
       }
     })
 
-    .state('tab.adopt', {
-      url: '/adopt',
+    .state('tab.create', {
+      url: '/create',
       views: {
-        'adopt-tab': {
-          templateUrl: 'templates/adopt.html'
+        'create-tab': {
+          templateUrl: 'templates/create.html'
+        }
+      }
+    })
+
+    .state('tab.edit-performance', {
+      url: '/performance/:pid',
+      views: {
+        'events-tab': {
+          templateUrl: 'templates/event-performance.html'
         }
       }
     })
@@ -63,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/tab/events');
 
 });
 
