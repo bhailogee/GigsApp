@@ -8,7 +8,7 @@
 angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -16,11 +16,17 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+    })
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: 'templates/tabs.html'
+      templateUrl: 'templates/tabs.html',
+      controller:'IndexCtrl'
     })
 
     // the event tab has its own child nav-view and history
@@ -72,7 +78,10 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/events');
+  $urlRouterProvider.otherwise('/login');
+
+
+    $ionicConfigProvider.tabs.position('bottom');
 
 });
 

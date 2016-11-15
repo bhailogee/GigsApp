@@ -4,25 +4,35 @@
   Each tab's child <ion-nav-view> directive will have its own 
   navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-default">
+<ion-nav-bar class="bar-positive">
+    <ion-nav-back-button >
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right" >
+        <button class="button ion-log-out  button-dark" ng-click="onLogout();">
+        </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
 
 
-  <!-- Pets Tab -->
-  <ion-tab title="Events" icon="icon ion-home" href="#/tab/events">
-    <ion-nav-view name="events-tab"></ion-nav-view>
-  </ion-tab>
+    <ion-tabs class="tabs-striped tabs-dark tabs-color-positive">
 
 
-  <!-- Create Tab -->
-  <ion-tab title="Create" icon="icon ion-compose" href="#/tab/create">
-    <ion-nav-view name="create-tab"></ion-nav-view>
-  </ion-tab>
+      <!-- Events Tab -->
+      <ion-tab title="Events" icon="icon ion-home" href="#/tab/events">
+        <ion-nav-view name="events-tab"></ion-nav-view>
+      </ion-tab>
 
 
-  <!-- About Tab -->
-  <ion-tab title="About" icon="icon ion-search" href="#/tab/about">
-    <ion-nav-view name="about-tab"></ion-nav-view>
-  </ion-tab>
+      <!-- Create Tab -->
+      <ion-tab title="Create" icon="icon ion-compose" href="#/tab/create">
+        <ion-nav-view name="create-tab"></ion-nav-view>
+      </ion-tab>
 
 
-</ion-tabs>
+      <!-- About Tab -->
+      <ion-tab title="About" icon="icon ion-search" href="#/tab/about">
+        <ion-nav-view name="about-tab"></ion-nav-view>
+      </ion-tab>
+
+
+    </ion-tabs>

@@ -14,6 +14,21 @@ angular.module('starter.controllers', [])
   $scope.event = EventService.get($stateParams.eventId);
 })
 
+.controller('LoginCtrl', function($scope,LoginService, $ionicPopup, $state) {
+  $scope.data = {};
+
+    $scope.login = function() {
+      LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+        $state.go('tab.event-index');
+      }).error(function(data) {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Login failed!',
+          template: 'Please check your credentials!'
+        });
+      });
+    }
+})
+
 // A simple controller that shows performance data
 .controller('EventPerformanceCtrl', function($scope, $stateParams, EventService) {
   // "Events" is a service returning mock data (services.js)
@@ -26,4 +41,10 @@ angular.module('starter.controllers', [])
       debugger;
     }
     $scope.deleteEventPerformance = EventService.deleteEventPerformance;
+})
+
+.controller('IndexCtrl', function($scope, $state) {
+    $scope.onLogout = function(){
+      $state.go('login');
+    }
 });
