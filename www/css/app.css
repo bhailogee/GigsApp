@@ -8,6 +8,13 @@
 .logo-img{
 margin:0 auto;	
 }
+.bg-img{
+	background: url(../img/bg-image.jpg);
+  background-size: cover;
+}
+.f-s-12{
+	font-size:22px !important;
+}
 .logo-img img{
 width: 230px;
     position:absolute;
@@ -100,4 +107,45 @@ white-space: nowrap;
 .space-remove{
 	padding-left:0px;
 	padding-right:0px;
+}
+.insti-arrow{
+	margin-top: 16px;
+}
+.trash-ico{
+	right:40px !important;
+	color: #ef473a;
+}
+.item-divider {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 30px;
+    background-color: #01579b;
+    color: #FFF;
+    font-weight: 500;
+}
+.list-heading{
+	background-color: #ededed;
+padding-top: 8px;
+padding-bottom: 8px;
+font-size: 16px;
+}
+.images-thumb{
+	background-color: #f0f0f0;
+text-align: center;
+border: 1px solid #dfdfdf;
+ width: 200px; /* whatever set width */
+    display: inline-block; /* or you could float them */
+    overflow: hidden;
+	margin-right: 5px;
+}
+.add-image{
+	position: relative;
+	top: 36%;
+	color:#444444;
+}
+.songs-listings{
+	margin-bottom:0px;
+}
+.detail-edit-icon{
+	margin-top: 17px;
 }

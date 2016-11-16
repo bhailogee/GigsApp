@@ -1,5 +1,81 @@
-<h4>Performances</h4>
+<div class="list">
 
+  <div class="item item-divider">
+    Institute Information
+  </div>
+
+    <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Institute Name</span>
+    <input type="text" placeholder="Institute Name">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Address</span>
+    <input type="text" placeholder="Address">
+  </label>
+  <label class="item item-input item-stacked-label item-icon-right">
+    <span class="input-label">Type</span>
+    <input type="text" placeholder="university">
+    <i class="icon ion-ios-arrow-forward insti-arrow"></i>
+  </label>
+	
+</div>
+  <div class="item item-divider">
+    Performance Information
+  </div>
+  <ul class="list songs-listings">
+	<li class="item item-icon-right list-heading">
+     List Of Songs
+  </li>
+  <li class="item item-icon-right">
+     Tere Bin
+     <i class="icon ion-edit f-s-12"></i>
+     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
+  </li>
+    <li class="item item-icon-right">
+     You Make Me Feel So Good
+     <i class="icon ion-edit f-s-12"></i>
+     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
+  </li>
+   <li class="item item-icon-right">
+     Broken Dreams
+     <i class="icon ion-edit f-s-12"></i>
+     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
+  </li>
+   <li class="item item-icon-right">
+     Marcelo Zarvos - Morning Montage
+     <i class="icon ion-edit f-s-12"></i>
+     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
+  </li>
+  <li class="item item-icon-right">
+    Jam For Jerry
+     <i class="icon ion-edit f-s-12"></i>
+     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
+  </li>
+    <li class="item item-icon-left">
+    Add more songs
+     <i class="icon ion-plus-circled f-s-12"></i>
+  </li>
+  <li class="item item-icon-right list-heading">
+     Performance Pictures
+  </li>
+</ul>
+<div class="row space-remove">
+  <div class="col images-thumb">
+	<img class="full-image" src="img/rock-band-2-thumb-298x168.png">
+  </div>
+ <div class="col images-thumb">
+<img class="full-image" src="img/band_mfbp_back.jpg">
+  </div>
+  <div class="col images-thumb">
+  <i class="icon ion-plus-circled f-s-12 add-image"></i>
+  </div>
+</div>
+</div>
+
+ <div class="item item-divider">
+    Participants' Information
+  </div>
     <ion-list ng-controller="EventPerformanceCtrl"
                          show-delete="shouldShowDelete"
                          show-reorder="shouldShowReorder"
@@ -8,10 +84,10 @@
 
             <span>{{item.pid}}</span>
             <span>{{item.name}}</span>
-            <ion-option-button class="button-positive"
+<!--            <ion-option-button class="button-positive"
                                ng-click="deleteEventPerformance(event.id,item.pid)">
                 Delete
-            </ion-option-button>
+            </ion-option-button>-->
            <!-- <ion-option-button class="button-info"
                                ng-click="edit(item)">
                 Edit
@@ -24,4 +100,11 @@
             </ion-reorder-button>-->
 
         </ion-item>
+        
+         <ion-item> <!--class="item-thumbnail-left"-->
+
+            <span>Bilawal</span>    
+
+        </ion-item>
+        
     </ion-list>

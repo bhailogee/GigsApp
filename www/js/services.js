@@ -25,11 +25,11 @@ angular.module('starter.services', [])
     getPerformances:function(eventId){
 
       var performance = [
-        {pid:1,name:"a"},
-        {pid:2,name:"b"},
-        {pid:3,name:"c"},
-        {pid:4,name:"d"},
-        {pid:5,name:"e"}
+        {pid:1,name:"John Doe"},
+        {pid:2,name:"Zoe Doe"},
+        {pid:3,name:"Ali"},
+        {pid:4,name:"Ahmed"},
+        {pid:5,name:"Shahid"}
       ];
 
       return performance;
