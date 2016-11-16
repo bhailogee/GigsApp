@@ -1,0 +1,19 @@
+{
+  "name": "gigapp",
+  "authors": [
+    "Waseem <muhammad.wasim@zigron.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": "true",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "ngCordova": "^0.1.27-alpha"
+  }
+}

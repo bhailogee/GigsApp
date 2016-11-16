@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+  angular.module('starter.services', [])
 
 /**
  * A simple example service that returns some data.
@@ -8,10 +8,10 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var events = [
-    { id: 0, title: 'Undertow Sessions', description: '18th sep 2016' },
-    { id: 1, title: 'Rockify Tonight', description: '25th sep 2016' },
-    { id: 2, title: 'Islamabad Rock Festival', description: '2nd oct 2016' },
-    { id: 3, title: 'String Festival', description: '9th nov 2016' }
+    { id: 0, title: 'Undertow Sessions', ondate: '18th sep 2016', description: '18th sep 2016' },
+    { id: 1, title: 'Rockify Tonight', description: '25th sep 2016',ondate: '25th sep 2016' },
+    { id: 2, title: 'Islamabad Rock Festival', description: '2nd oct 2016' ,ondate: '2nd sep 2016'},
+    { id: 3, title: 'String Festival', description: '9th nov 2016' ,ondate: '9th sep 2016'}
   ];
 
   return {

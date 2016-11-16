@@ -1,0 +1,14 @@
+angular.module('starter.services', [])
+.service('storageService',['$cordovaSQLite',function(cordovaSQLite){
+
+    var db = cordovaSQLite.openDB({name:"my.db"});
+    var storage={
+
+      save:function(query,params){
+
+      },
+      syncOffline:function(){
+
+      }
+    };
+  }]);
