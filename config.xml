@@ -10,6 +10,7 @@
     <content src="index.html" />
     <access origin="*" />
 	<plugin name="cordova-plugin-camera" spec="~2.3.0" />
+	<plugin name="cordova-plugin-device" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
