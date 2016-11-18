@@ -9,8 +9,16 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-	<plugin name="cordova-plugin-camera" spec="~2.3.0" />
-	<plugin name="cordova-plugin-device" />
+	
+	<plugin name="cordova-plugin-device" />	
+	<plugin name="cordova-plugin-media" />
+	
+	<icon src="icon.png" />
+    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />	
+	
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
