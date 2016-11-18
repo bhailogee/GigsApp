@@ -10,8 +10,6 @@
     <content src="index.html" />
     <access origin="*" />
 	
-	<plugin name="cordova-plugin-device" />	
-	<plugin name="cordova-plugin-media" />
 	
 	<icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
