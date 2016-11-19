@@ -4,21 +4,51 @@
   The PetCtrl pulls data from the Pets service (service.js)
   The Pets service returns an array of event data
 -->
-<ion-view title="">
+<ion-view title="Event Detail">
   <ion-content padding="true">
   <div class="row space-remove">
   	<div class="col col-67">
   	<h3 class="event-heading">
-        <b>{{event.title}}</b>
+        <input type="text" style="font-weight: bold;font-size:larger; " placeholder="Address" ng-model="event.eventtitle">
     </h3>
-    <p class="event-detail">{{ event.description }}</p>
+    <!--<p class="event-detail">
+        <input type="date" ng-model="event.eventdate | dateToISO" >
+    </p>-->
     </div>
     <div class="col">
-    <button class="button button-assertive button-small delete-btn">
-      Delete Record
-    </button>
+
     </div>
-  </div>  
+  </div>
+
+      <div class="list">
+
+          <div class="item item-divider">
+              Institute Information
+          </div>
+
+          <div class="list">
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Institute Name</span>
+                  <input type="text" placeholder="Institute Name" ng-model="event.institutename">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Address</span>
+                  <input type="text" placeholder="Address" ng-model="event.address">
+              </label>
+              <label class="item item-input item-select">
+                  <span class="input-label">Type</span>
+                  <select ng-model="event.type">
+                      <option >University</option>
+                      <option >College</option>
+                      <option >School</option>
+                  </select>
+              </label>
+              <button class="button button-positive button-block">
+                  Save
+              </button>
+          </div>
+      </div>
+
       <div ng-include src="'templates/event-performance-list.html'"></div>
 <!--          <button class="button button-full button-positive">
               Participants
@@ -27,6 +57,8 @@
       </div>
 
 
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/events"> All Events</a></p>
+      <button class="button button-assertive button-block">
+          Delete Record
+      </button>
   </ion-content>
 </ion-view>

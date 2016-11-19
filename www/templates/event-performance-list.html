@@ -1,56 +1,18 @@
 <div class="list">
 
   <div class="item item-divider">
-    Institute Information
-  </div>
-
-    <div class="list">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Institute Name</span>
-    <input type="text" placeholder="Institute Name">
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Address</span>
-    <input type="text" placeholder="Address">
-  </label>
-  <label class="item item-input item-stacked-label item-icon-right">
-    <span class="input-label">Type</span>
-    <input type="text" placeholder="university">
-    <i class="icon ion-ios-arrow-forward insti-arrow"></i>
-  </label>
-	
-</div>
-  <div class="item item-divider">
     Performance Information
   </div>
   <ul class="list songs-listings">
 	<li class="item item-icon-right list-heading">
      List Of Songs
-  </li>
-  <li class="item item-icon-right">
-     Tere Bin
-     <i class="icon ion-edit f-s-12"></i>
-     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
-  </li>
-    <li class="item item-icon-right">
-     You Make Me Feel So Good
-     <i class="icon ion-edit f-s-12"></i>
-     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
-  </li>
-   <li class="item item-icon-right">
-     Broken Dreams
-     <i class="icon ion-edit f-s-12"></i>
-     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
-  </li>
-   <li class="item item-icon-right">
-     Marcelo Zarvos - Morning Montage
-     <i class="icon ion-edit f-s-12"></i>
-     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
-  </li>
-  <li class="item item-icon-right">
-    Jam For Jerry
-     <i class="icon ion-edit f-s-12"></i>
-     <i class="icon ion-trash-b f-s-12 trash-ico"></i>
+    </li>
+  <li ng-repeat="prf in performances" class="item item-icon-right" ng-hide="prf.__deleted">
+     <input type="text" class="inputBox" ng-model="prf.title" ng-disabled="!prf.__update"/>
+     <i class="icon ion-edit f-s-12" ng-click="updatePerformance(prf)" ng-show="!prf.__update"></i>
+      <i class="icon ion-android-done" ng-show="prf.__update" ng-click="updatePerformance(prf)"></i>
+      <i class="icon ion-trash-b f-s-12 trash-ico" ng-click="deletePerformance(prf)"></i>
+
   </li>
     <li class="item item-icon-left">
     Add more songs

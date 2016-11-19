@@ -3,61 +3,42 @@
 /**
  * A simple example service that returns some data.
  */
-.factory('EventService', function() {
-  // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var events = [
-    { id: 0, title: 'Undertow Sessions', ondate: '18th sep 2016', description: '18th sep 2016' },
-    { id: 1, title: 'Rockify Tonight', description: '25th sep 2016',ondate: '25th sep 2016' },
-    { id: 2, title: 'Islamabad Rock Festival', description: '2nd oct 2016' ,ondate: '2nd sep 2016'},
-    { id: 3, title: 'String Festival', description: '9th nov 2016' ,ondate: '9th sep 2016'}
-  ];
-
-  return {
-    all: function() {
-      return events;
-    },
-    get: function(eventId) {
-      // Simple index lookup
-      return events[eventId];
-    },
-    getPerformances:function(eventId){
-
-      var performance = [
-        {pid:1,name:"John Doe"},
-        {pid:2,name:"Zoe Doe"},
-        {pid:3,name:"Ali"},
-        {pid:4,name:"Ahmed"},
-        {pid:5,name:"Shahid"}
-      ];
-
-      return performance;
-    },
-    deleteEventPerformance:function(eventID,performanceID){
-    }
-  }
-})
-  .service('LoginService', function($q) {
+  .service('LoginService',['$q','dataService', function($q,dataService) {
     return {
       loginUser: function(name, pw) {
         var deferred = $q.defer();
         var promise = deferred.promise;
 
-        if (name == 'admin' && pw == 'admin') {
+        dataService.remote.findOne({username:name,password:pw},dataService.collections.users).then(function(result){
           deferred.resolve('Welcome ' + name + '!');
-        } else {
+        },function(){
           deferred.reject('Wrong credentials.');
-        }
-        promise.success = function(fn) {
-          promise.then(fn);
-          return promise;
-        }
-        promise.error = function(fn) {
-          promise.then(null, fn);
-          return promise;
-        }
+        });
         return promise;
       }
     }
-  });
+  }])
+    .service('PerformanceService',['$q','dataService', function($q,dataService) {
+        this.get = function (eventId) {
+          return dataService.remote.find({eventid: eventId}, 'performances');
+        };
+
+      this.save=function(prf){
+        return dataService.upsert(prf, 'performances');
+      };
+
+      this.delete = function(prf) {
+        return dataService.delete(prf, 'performances');
+      }
+    }])
+
+    .service('ParticipantsService',['$q','dataService', function($q,dataService) {
+      this.get = function (eventId) {
+        return dataService.remote.find({eventid: eventId}, 'participants');
+      }
+      this.save=function(par){
+        return dataService.upsert(par, 'participants');
+      };
+
+    }]);

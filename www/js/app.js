@@ -5,7 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','ngCordova'])
+
+document.addEventListener("online", function(){
+  debugger;
+}, false);
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','starter.directives','ngCordova','camelCaseToHuman'])
 
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
@@ -34,8 +38,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','n
       url: '/events',
       views: {
         'events-tab': {
-          templateUrl: 'templates/event-index.html',
-          controller: 'EventIndexCtrl'
+          template:"<event-index-directive></event-index-directive>"
         }
       }
     })
@@ -83,5 +86,23 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','n
 
     $ionicConfigProvider.tabs.position('bottom');
 
-});
+})
+  .run(function($document,$rootScope,dataService) {
+    /*$document[0].addEventListener("online", onOnline, false);
+
+    $document[0].addEventListener("offline", onOffline, false);
+
+    function onOnline() {
+      $rootScope.$apply(function () {
+        console.log("just got online event");
+        dataService.sync();
+      });
+    }
+
+    function onOffline() {
+      $rootScope.$apply(function () {
+        console.log("just got offline event");
+      });
+    }*/
+  });
 

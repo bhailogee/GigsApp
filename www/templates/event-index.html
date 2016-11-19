@@ -3,7 +3,7 @@
   It was wired up in the app config (app.js) 
   The 'events' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<ion-view title="Event Records">
+<ion-view title="Records List">
   <ion-content>
   <div class="row">
     <div class="col col-offset-25 col-50" >
@@ -20,10 +20,10 @@
     <ion-list>
 
       <ion-item ng-repeat="event in events" type="item-text-wrap">
-      <a class="item item-thumbnail-left list-views item-icon-right " href="#/tab/event/{{event.id}}">
+      <a class="item item-thumbnail-left list-views item-icon-right " href="#/tab/event/{{event._id}}">
         <img src="img/blue-album.jpg">
-        <h2><b>{{event.title}}</b></h2>
-        <p>{{event.ondate}}</p>
+        <h2><b>{{event.eventtitle}}</b></h2>
+        <p>{{event.eventdate}}</p>
         
          <i class="icon ion-ios-arrow-forward"></i>
       </a>  

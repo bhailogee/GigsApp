@@ -1,5 +1,5 @@
 angular.module('starter.services', [])
-.service('storageService',['$cordovaSQLite',function(cordovaSQLite){
+  .service('storageService',['$cordovaSQLite',function(cordovaSQLite){
 
     var db = cordovaSQLite.openDB({name:"my.db"});
     var storage={
