@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a79086-c237-4758-a8f3-3dc8c4dee06b" name="Default" comment="Services Added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/components/eventIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/lib/lodash/lodash.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/components/login/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/lib/minimongo/minimongo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/lib/minimongo/minimongo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/lib/minimongo/minimongo.standalone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
+    <list default="true" id="31a79086-c237-4758-a8f3-3dc8c4dee06b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/dataService.js" afterPath="$PROJECT_DIR$/www/js/services/dataService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/event-detail.html" afterPath="$PROJECT_DIR$/www/templates/event-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/event-index.html" afterPath="$PROJECT_DIR$/www/templates/event-index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/event-performance-list.html" afterPath="$PROJECT_DIR$/www/templates/event-performance-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/storageService" afterPath="$PROJECT_DIR$/www/js/services/storageService" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -75,8 +59,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/build/intermediates/assets/debug/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
-              <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+              <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -92,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event-performance.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="event-performance.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/event-performance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42222223" vertical-offset="16" max-vertical-offset="765">
-              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+            <state vertical-scroll-proportion="-10.5" vertical-offset="16" max-vertical-offset="765">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -114,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataService.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dataService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/services/dataService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1121" max-vertical-offset="2890">
-              <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.4338747" vertical-offset="0" max-vertical-offset="2890">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -187,8 +171,8 @@
         <option value="$PROJECT_DIR$/platforms/android/build/intermediates/assets/debug/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/templates/event-performance-list.html" />
         <option value="$PROJECT_DIR$/www/js/services.js" />
-        <option value="$PROJECT_DIR$/www/js/services/dataService.js" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/js/services/dataService.js" />
       </list>
     </option>
   </component>
@@ -413,7 +397,11 @@
       <created>1479302529231</created>
       <updated>1479302529231</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Some Additions">
+      <created>1479574279384</created>
+      <updated>1479574279384</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -457,7 +445,8 @@
     </option>
     <MESSAGE value="Adding Login page and updates" />
     <MESSAGE value="Services Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Services Added" />
+    <MESSAGE value="Some Additions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some Additions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -822,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/build/intermediates/assets/debug/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
-          <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -852,14 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/dataService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1121" max-vertical-offset="2890">
-          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1360">
@@ -870,8 +851,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/event-performance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42222223" vertical-offset="16" max-vertical-offset="765">
-          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+        <state vertical-scroll-proportion="-10.5" vertical-offset="16" max-vertical-offset="765">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/dataService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4338747" vertical-offset="0" max-vertical-offset="2890">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>

@@ -10,8 +10,8 @@ angular.module('starter.services')
     var utils = minimongo.utils;
 // Create local db (in memory database with no backing)
     var db = new LocalDb();
-/*    var remoteDb = new minimongo.RemoteDb("http://202.142.174.203:3000/api/", {});*/
-    var remoteDb = new minimongo.RemoteDb("http://127.0.0.1:3000/api/",{});
+    var remoteDb = new minimongo.RemoteDb("http://202.142.174.203:3000/api/", {});
+    /*var remoteDb = new minimongo.RemoteDb("http://127.0.0.1:3000/api/",{});*/
 
     var collections = {
       events: "events", files: "files", participants: "participants", performances: "performances", users: "users"
