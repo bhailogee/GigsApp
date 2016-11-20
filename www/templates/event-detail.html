@@ -5,15 +5,15 @@
   The Pets service returns an array of event data
 -->
 <ion-view title="Event Detail">
-  <ion-content padding="true">
+  <ion-content class="has-header has-footer">
   <div class="row space-remove">
   	<div class="col col-67">
   	<h3 class="event-heading">
-        <input type="text" style="font-weight: bold;font-size:larger; " placeholder="Address" ng-model="event.eventtitle">
+        <input type="text" style="font-weight: bold;font-size:larger; text-transform: capitalize;" placeholder="Event Name" ng-model="event.eventtitle">
     </h3>
-    <!--<p class="event-detail">
-        <input type="date" ng-model="event.eventdate | dateToISO" >
-    </p>-->
+        <p class="event-detail">
+            <input type="text" ng-model="event.eventdate" placeholder="Event Date" ng-click="openDatePicker()"  >
+        </p>
     </div>
     <div class="col">
 
@@ -38,12 +38,12 @@
               <label class="item item-input item-select">
                   <span class="input-label">Type</span>
                   <select ng-model="event.type">
-                      <option >University</option>
-                      <option >College</option>
-                      <option >School</option>
+                      <option value="University" >University</option>
+                      <option value="College">College</option>
+                      <option value="School">School</option>
                   </select>
               </label>
-              <button class="button button-positive button-block">
+              <button class="button button-positive button-block" ng-click="saveEvent(event)">
                   Save
               </button>
           </div>
@@ -57,7 +57,7 @@
       </div>
 
 
-      <button class="button button-assertive button-block">
+      <button class="button button-assertive button-block" ng-click="deleteEvent(event)">
           Delete Record
       </button>
   </ion-content>

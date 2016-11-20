@@ -9,7 +9,7 @@
 document.addEventListener("online", function(){
   debugger;
 }, false);
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','starter.directives','ngCordova','camelCaseToHuman'])
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','starter.directives','ngCordova','ionic-datepicker'])
 
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
@@ -85,6 +85,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','s
 
 
     $ionicConfigProvider.tabs.position('bottom');
+    $ionicConfigProvider.tabs.style('striped');
 
 })
   .run(function($document,$rootScope,dataService) {

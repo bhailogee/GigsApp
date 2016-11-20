@@ -3,20 +3,12 @@
   It was wired up in the app config (app.js) 
   The 'events' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<ion-view title="Records List">
-  <ion-content>
-  <div class="row">
-    <div class="col col-offset-25 col-50" >
-        <img width="100%" src="img/LOGO.png" class="full-image inner-logo">
-    </div>
-</div>
-
-<div class="list list-inset">
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Search Records"/>
-  </label>
-</div>
+<ion-view title="Rock Band Events">
+  <ion-content class="has-header has-footer">
+      <ion-refresher
+              pulling-text="Pull to refresh..."
+              on-refresh="doRefresh()">
+      </ion-refresher>
     <ion-list>
 
       <ion-item ng-repeat="event in events" type="item-text-wrap">

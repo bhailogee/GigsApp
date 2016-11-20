@@ -70,64 +70,34 @@ angular.module('starter.services')
         Object.preventExtensions(newObject);
         return newObject;
       },
-      upsert: function (data, collectionName) {
-        var deferred = $q.defer();
-        db[data.__collection || collectionName].upsert(data, function () {
-          deferred.resolve();
-          hybridDb.upload(function(){
-
-          });
-        });
-        return deferred.promise;
-      },
-      delete: function (data, collectionName) {
-        var deferred = $q.defer();
-        db[data.__collection || collectionName].remove(data._id,function(){
-          deferred.resolve();
-          hybridDb.upload(function(){
-
-          });
-        });
-        return deferred.promise;
-      },
-      findOne: function (data, collectionName) {
-        var deferred = $q.defer();
-
-        db[data.__collection || collectionName].findOne(data, {}, function (res) {
-          if (res) {
-            deferred.resolve(res);
+      attachServices:function(collectionName) {
+        this.upsert = function (data) {
+          if(!data._id)
+          {
+            data._id = utils.createUid();
           }
-          else {
-            deferred.reject();
-          }
-        });
-        return deferred.promise;
-      },
-      find: function (data, collectionName) {
-        var deferred = $q.defer();
-        var promise = deferred.promise;
-        return db[data.__collection || collectionName].find(data);
-      },
-      sync: function () {
-        hybridDb.upload();
-      },
-      remote: {
-        findOne: function (data, collectionName) {
           var deferred = $q.defer();
-          var remote = remoteDb[data.__collection || collectionName].findOne(data, function (res) {
-            if (res) {
-              deferred.resolve(res);
-            }
-            else {
-              deferred.reject();
-            }
+          db[collectionName].upsert(data, function () {
+            deferred.resolve(data._id);
+            hybridDb.upload(function () {
+            });
           });
           return deferred.promise;
-        },
-        find: function (data, collectionName) {
+        }
+        this.delete = function (data) {
           var deferred = $q.defer();
-          var remote = remoteDb[data.__collection || collectionName].find(data);
-          remote.fetch(function (res) {
+          db[collectionName].remove(data._id, function () {
+            deferred.resolve();
+            hybridDb.upload(function () {
+
+            });
+          });
+          return deferred.promise;
+        }
+        this.findOne = function (data) {
+          var deferred = $q.defer();
+
+          db[collectionName].findOne(data, {}, function (res) {
             if (res) {
               deferred.resolve(res);
             }
@@ -137,6 +107,53 @@ angular.module('starter.services')
           });
           return deferred.promise;
         }
+        this.find = function (data) {
+          var deferred = $q.defer();
+          var promise = deferred.promise;
+          return db[collectionName].find(data||{});
+        }
+        this.remote = {
+          findOne: function (data) {
+            var deferred = $q.defer();
+            var remote = remoteDb[collectionName].findOne(data, function (res) {
+              if (res) {
+                deferred.resolve(res);
+              }
+              else {
+                deferred.reject();
+              }
+            });
+            return deferred.promise;
+          },
+          find: function (data) {
+            var deferred = $q.defer();
+            var remote = remoteDb[collectionName].find(data||{});
+            remote.fetch(function (res) {
+              if (res) {
+                deferred.resolve(res);
+              }
+              else {
+                deferred.reject();
+              }
+            });
+            return deferred.promise;
+          },
+          findByID:function(_id){
+            var deferred = $q.defer();
+            var remote = remoteDb[collectionName].findOne({_id:_id}, function (res) {
+              if (res) {
+                deferred.resolve(res);
+              }
+              else {
+                deferred.reject();
+              }
+            });
+            return deferred.promise;
+          }
+        }
+      },
+      sync: function () {
+        hybridDb.upload();
       }
     };
   });

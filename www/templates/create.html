@@ -1,19 +1,52 @@
 <!--
   This template loads for the 'tab.adopt' state (app.js)
 -->
-<ion-view title="Adopt A Pet">
-  <ion-content has-tabs="true">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <span class="input-label">Your name</span>
-        <input type="text">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Your email</span>
-        <input type="email">
-      </label>
-      <ion-toggle>Subscribe To Newsletter</ion-toggle>
-      <button class="button button-positive button-block">Adopt</button>
+<ion-view title="Create an event">
+    <ion-content padding="true" class="has-header" ng-controller="CreateEventCtrl">
+        <div class="row space-remove">
+            <div class="col col-67">
+                <h3 class="event-heading">
+                    <input type="text" style="font-weight: bold;font-size:larger;text-transform: capitalize; " placeholder="Event Name" ng-model="event.eventtitle">
+                </h3>
+                <p class="event-detail">
+                    <input type="text" ng-model="event.eventdate" placeholder="Event Date" ng-click="openDatePicker()"  >
+                    <!--<input type="text" datetime="yyyy-MM-dd" ng-model="event.eventdate" default="Jan 1, 2000">-->
+                </p>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+    <div class="list">
+
+        <div class="item item-divider">
+            Institute Information
+        </div>
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Institute Name</span>
+                <input type="text" placeholder="Institute Name" ng-model="event.institutename">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Address</span>
+                <input type="text" placeholder="Address" ng-model="event.address">
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">Type</span>
+                <select ng-model="event.type">
+                    <option value="University" >University</option>
+                    <option value="College">College</option>
+                    <option value="School">School</option>
+                </select>
+            </label>
+
+            <div class="button-bar">
+                <a class="button button-balanced" ng-click="event = null">Reset</a>
+                <a class="button button-positive" ng-click="saveEvent(event)">Save</a>
+            </div>
+        </div>
     </div>
-  </ion-content>
+    </ion-content>
 </ion-view>

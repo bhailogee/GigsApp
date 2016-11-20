@@ -14,7 +14,12 @@
       <i class="icon ion-trash-b f-s-12 trash-ico" ng-click="deletePerformance(prf)"></i>
 
   </li>
-    <li class="item item-icon-left">
+      <li class="item item-icon-right" ng-show="newprf">
+          <input type="text" class="inputBox" placeholder="New Song" ng-model="newprf.title"/>
+          <i class="icon ion-android-done" ng-click="addPerformance(newprf);newprf=null;"></i>
+          <i class="icon ion-trash-b f-s-12 trash-ico" ng-click="newprf = null"></i>
+      </li>
+    <li class="item item-icon-left" ng-click="newprf = {}">
     Add more songs
      <i class="icon ion-plus-circled f-s-12"></i>
   </li>
@@ -38,35 +43,84 @@
  <div class="item item-divider">
     Participants' Information
   </div>
-    <ion-list ng-controller="EventPerformanceCtrl"
-                         show-delete="shouldShowDelete"
-                         show-reorder="shouldShowReorder"
-                         can-swipe="listCanSwipe">
-        <ion-item ng-repeat="item in performances"  href="#/tab/performance/{{item.pid}}"> <!--class="item-thumbnail-left"-->
+    <ul class="list">
+        <li ng-repeat="part in participants" class="item" >
 
-            <span>{{item.pid}}</span>
-            <span>{{item.name}}</span>
-<!--            <ion-option-button class="button-positive"
-                               ng-click="deleteEventPerformance(event.id,item.pid)">
-                Delete
-            </ion-option-button>-->
-           <!-- <ion-option-button class="button-info"
-                               ng-click="edit(item)">
-                Edit
-            </ion-option-button>-->
-            <!--<ion-delete-button class="ion-minus-circled"
-                               ng-click="performances.splice($index, 1)">
-            </ion-delete-button>-->
-            <!--<ion-reorder-button class="ion-navicon"
-                                on-reorder="reorderItem(item, $fromIndex, $toIndex)">
-            </ion-reorder-button>-->
 
-        </ion-item>
-        
-         <ion-item> <!--class="item-thumbnail-left"-->
 
-            <span>Bilawal</span>    
+                    <label class="item-input">
+                        <span class="input-label">Name</span>
+                        <input type="text" placeholder="Participant's Name" ng-model="part.name" style="    font-weight: bold; text-transform: capitalize;" ng-disabled="!part.__update">
+                    </label>
 
-        </ion-item>
-        
-    </ion-list>
+
+            <label class="item-input">
+                <input type="text" placeholder="Contact Details" ng-model="part.contactdetails" ng-disabled="!part.__update">
+            </label>
+
+            <div class="row">
+                <div class="col col-25">
+                    <input type="text" placeholder="Age" ng-model="part.age" style="font-style: italic;width:inherit;" ng-disabled="!part.__update">
+                </div>
+                <div class="col col-50 item-select" >
+                    <select ng-model="part.gender" ng-disabled="!part.__update" style="width:inherit;">
+                        <option value="Female" >Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="col col-25 item-icon-right">
+                    <i class="icon ion-trash-b f-s-12 trash-ico" ng-click="deleteParticipant(part)"></i>
+                    <i class="icon ion-edit f-s-12" ng-click="updateParticipant(part)" ng-show="!part.__update"></i>
+                    <i class="icon ion-android-done" ng-click="updateParticipant(part)" ng-show="part.__update" ></i>
+                </div>
+            </div>
+
+        </li>
+
+         <li class="item" ng-show="newpart"> <!--class="item-thumbnail-left"-->
+
+
+                 <label class="item-input">
+
+                     <input type="text" placeholder="Name" ng-model="newpart.name">
+                 </label>
+
+             <label class="item-input">
+
+                 <input type="text" placeholder="Contact Details" ng-model="newpart.contactdetails">
+             </label>
+
+             <div class="row">
+                 <div class="col col-25">
+                     <input type="text" placeholder="Age" ng-model="newpart.age" style="font-style: italic;width: inherit;">
+                 </div>
+                 <div class="col col-50 item-select">
+                     <select  ng-model="newpart.gender" style="width: inherit;">
+                         <option >Female</option>
+                         <option >Male</option>
+                         <option >Unknown</option>
+                     </select>
+                 </div>
+                 <div class="col col-25 item-icon-right">
+                     <i class="icon ion-trash-b f-s-12 trash-ico" ng-click="newpart= null"></i>
+                     <i class="icon ion-android-done" ng-click="addParticipant(newpart);newpart=null;"></i>
+                 </div>
+             </div>
+
+
+
+
+
+
+
+         </li>
+        <li ng-click="newpart = {}" class="item item-icon-left">
+
+                 Add participants
+                 <i class="icon ion-plus-circled f-s-12"></i>
+
+
+        </li>
+
+    </ul>
